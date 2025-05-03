@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
-import { Login } from './pages/Login';
+import { Navbar } from './components';
+import { Login, AdminDashboard, StudentDashboard, TeacherDashboard } from './Pages';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { TeacherDashboard } from './pages/TeacherDashboard';
 import { StudentDashboard } from './pages/StudentDashboard';

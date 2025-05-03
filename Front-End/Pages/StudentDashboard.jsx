@@ -4,9 +4,8 @@ const StudentDashboard = () => {
   const [permitted, setPermitted] = useState(false);
 
   useEffect(() => {
-    // Call the API to check if the user has permission to access the Student Dashboard
     const checkPermission = async () => {
-      const response = await fetch('/api/check-permission', {
+      const response = await fetch('http://localhost:5000/api/check-permission', {
         method: 'POST',
         body: JSON.stringify({ resource: 'student-dashboard' }),
         headers: { 'Content-Type': 'application/json' },

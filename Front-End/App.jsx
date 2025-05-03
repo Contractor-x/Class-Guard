@@ -1,25 +1,22 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './components';
-import {
-  Login,
-  AdminDashboard,
-  StudentDashboard,
-  TeacherDashboard,
-} from './Pages';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AdminDashboard from './pages/AdminDashboard';
+import Login from './pages/Login';
+import StudentDashboard from './pages/StudentDashboard';
+import TeacherDashboard from './pages/TeacherDashboard';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-      <main style={{ padding: '2rem' }}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/student" element={<StudentDashboard />} />
-          <Route path="/teacher" element={<TeacherDashboard />} />
-        </Routes>
-      </main>
+      <Switch>
+        <Route path="/" exact component={Login} />
+        <Route path="/admin-dashboard" component={AdminDashboard} />
+        <Route path="/student-dashboard" component={StudentDashboard} />
+        <Route path="/teacher-dashboard" component={TeacherDashboard} />
+      </Switch>
     </Router>
   );
 };

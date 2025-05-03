@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const checkPermission = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/api/check-permission', {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'}/api/check-permission`, {
           resource: 'admin-dashboard',
         });
         setAccessAllowed(response.data.permitted);

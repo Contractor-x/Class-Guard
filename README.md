@@ -1,18 +1,10 @@
-Perfect — let’s build a **GitHub README** that’s clean, authoritative, and built to win. Here's a high-impact format for your repo:
-Structured, professional, and presentation-ready — ready for judges, developers, and potential users.
-
----
-
-## `README.md` Structure for Class Guard > Permissions Redefined
-
-````md
-# Class Guard > Permissions Redefined
+# Class Guard (Permissions Redefined)
 
 A modern classroom access control system built to protect educational environments across Africa. Class Guard uses externalized, fine-grained authorization powered by Permit.io — securing teaching tools against unauthorized access with role-based control for Admins, Teachers, and Students.
 
 ---
 
-## 📌 Overview
+##  Overview
 
 **Class Guard** is a digital teaching aid designed for African educators and students, offering secure content sharing, classroom access, and management through externalized authorization. 
 
@@ -23,19 +15,19 @@ Traditional access models embed permission logic directly into code. This makes 
 
 ---
 
-## 📊 Features at a Glance
+## Features 
 
 | Feature                        | Description                                                      |
 |-------------------------------|------------------------------------------------------------------|
-| 🔐 Externalized Authorization | Powered by Permit.io for dynamic role & policy control           |
-| 👩‍🏫 Teacher Dashboard         | Upload materials, manage classes, monitor student activity        |
-| 🧑‍🎓 Student Access            | Join classes, download materials, interact only with permitted data |
-| ⚙️ Admin Control               | Role assignment, access control, full visibility                 |
-| 📄 Audit Trail                 | All access attempts are logged and queryable                     |
+| Externalized Authorization | Powered by Permit.io for dynamic role & policy control           |
+| Teacher Dashboard         | Upload materials, manage classes, monitor student activity        |
+| Student Access            | Join classes, download materials, interact only with permitted data |
+| Admin Control               | Role assignment, access control, full visibility                 |
+| Audit Trail                 | All access attempts are logged and queryable                     |
 
 ---
 
-## 🔧 Tech Stack
+## Technical Stack
 
 | Layer        | Technology      |
 |--------------|-----------------|
@@ -47,7 +39,7 @@ Traditional access models embed permission logic directly into code. This makes 
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 > _Placeholder for UI images showing each user dashboard (Admin, Teacher, Student)_
 
@@ -57,11 +49,11 @@ Traditional access models embed permission logic directly into code. This makes 
 
 ---
 
-## 🧭 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/class-guard.git
+git clone https://github.com/contractor-x/class-guard.git
 cd class-guard
 ````
 
@@ -96,7 +88,7 @@ npm run dev
 
 ---
 
-## 🛠️ User Credentials for Testing
+##  User Credentials for Testing
 
 | Role  | Username | Password         |
 | ----- | -------- | ---------------- |
@@ -105,7 +97,7 @@ npm run dev
 
 ---
 
-## 🧪 How to Use the Platform
+##  How to Use the Platform
 
 | Role    | What You Can Do                                                             |
 | ------- | --------------------------------------------------------------------------- |
@@ -117,7 +109,7 @@ npm run dev
 
 ---
 
-## 🔍 Why Use Permit.io?
+## Why should i as a Dev use Permit.io?
 
 **Traditional Authorization:**
 
@@ -136,7 +128,7 @@ npm run dev
 
 ---
 
-## 📐 Architecture Diagram
+##  Architecture Diagram
 
 > *Insert diagram here: class\_guard\_architecture.png*
 
@@ -152,7 +144,7 @@ npm run dev
 
 ---
 
-## 📁 Folder Structure
+## Folder Layout 
 
 ```bash
 class-guard/
@@ -170,40 +162,26 @@ class-guard/
 
 ---
 
-## 🧭 Contributing
+## Contributing
 
-See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for setup, style guides, and contribution process.
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+<!--See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for setup, style guides, and contribution process.-->
 
 ---
 
-## 📣 DEV.to Submission Link
+## License
+
+This project is licensed under the MIT License. 
+
+---
+
+##  DEV.to Submission Link
 
 > *Coming soon – add the link to your final post once published*
 
 ---
 
-## 🧠 Credits
+## Credits
 
-* Built by [Your Name](https://github.com/your-handle)
+* Built by [Collins](https://github.com/contractor-x)
 * Powered by [Permit.io](https://permit.io)
 
----
-
-```
-
----
-
-This README does *three things extremely well*:
-
-1. ✅ Shows *what* the app does (value prop)
-2. ✅ Explains *how* to use it (walkthrough + credentials)
-3. ✅ Demonstrates *why* Permit.io is a better path forward (authorization comparison)
-
-Ready for me to help scaffold the backend folder next with Permit.io pre-wired in?
-```

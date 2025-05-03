@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export const StudentDashboard = () => {
+const StudentDashboard = () => {
+  const [permitted, setPermitted] = useState(false);
+
+  useEffect(() => {
+    // Call the API to check if the user has permission to access the Student Dashboard
+    const checkPermission = async () => {
+      const response = await fetch('/api/check-permission', {
+        method: 'POST',
+        body: JSON.stringify({ resource: 'student-dashboard' }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const data = await response.json();
+      setPermitted(data.permitted); // true or false
+    };
+
+    checkPermission();
+  }, []);
+
+  if (!permitted) {
+    return <p>You do not have permission to access this page.</p>;
+  }
+
   return (
-    <div className="p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-semibold mb-4">Student Dashboard</h2>
-      <div className="grid grid-cols-1 gap-6">
-        <div className="bg-gray-200 p-4 rounded-lg">
-          <h3 className="font-semibold mb-2">Access Materials</h3>
-          <p className="text-gray-700">View and download course materials from your enrolled classes.</p>
-        </div>
-        <div className="bg-gray-200 p-4 rounded-lg">
-          <h3 className="font-semibold mb-2">Submit Assignments</h3>
-          <p className="text-gray-700">Submit your assignments and track your progress.</p>
-        </div>
-      </div>
+    <div>
+      <h1>Student Dashboard</h1>
+      {/* Student Dashboard content goes here */}
     </div>
   );
 };
+
+export default StudentDashboard;

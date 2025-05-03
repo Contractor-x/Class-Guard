@@ -1,18 +1,29 @@
-import React from 'react';
+// src/components/Navbar.jsx
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
+const Navbar = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is an admin
+    const checkAdminStatus = async () => {
+      const response = await fetch('/api/check-admin');
+      const data = await response.json();
+      setIsAdmin(data.isAdmin);
+    };
+
+    checkAdminStatus();
+  }, []);
+
   return (
-    <nav className="bg-blue-600 p-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
-        <h1 className="text-2xl font-semibold">Class Guard</h1>
-        <div>
-          <Link to="/" className="px-4 py-2 hover:bg-blue-500 rounded">Home</Link>
-          <Link to="/admin" className="px-4 py-2 hover:bg-blue-500 rounded">Admin</Link>
-          <Link to="/teacher" className="px-4 py-2 hover:bg-blue-500 rounded">Teacher</Link>
-          <Link to="/student" className="px-4 py-2 hover:bg-blue-500 rounded">Student</Link>
-        </div>
-      </div>
+    <nav>
+      <Link to="/">Home</Link>
+      {isAdmin && <Link to="/admin-dashboard">Admin Dashboard</Link>}
+      <Link to="/student-dashboard">Student Dashboard</Link>
+      <Link to="/teacher-dashboard">Teacher Dashboard</Link>
     </nav>
   );
 };
+
+export default Navbar;

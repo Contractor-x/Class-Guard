@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export const TeacherDashboard = () => {
+const TeacherDashboard = () => {
+  const [permitted, setPermitted] = useState(false);
+
+  useEffect(() => {
+    // Call the API to check if the user has permission to access the Teacher Dashboard
+    const checkPermission = async () => {
+      const response = await fetch('/api/check-permission', {
+        method: 'POST',
+        body: JSON.stringify({ resource: 'teacher-dashboard' }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const data = await response.json();
+      setPermitted(data.permitted); // true or false
+    };
+
+    checkPermission();
+  }, []);
+
+  if (!permitted) {
+    return <p>You do not have permission to access this page.</p>;
+  }
+
   return (
-    <div className="p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-semibold mb-4">Teacher Dashboard</h2>
-      <div className="grid grid-cols-2 gap-6">
-        <div className="bg-gray-200 p-4 rounded-lg">
-          <h3 className="font-semibold mb-2">Upload Materials</h3>
-          <p className="text-gray-700">Add course materials and assignments for students.</p>
-        </div>
-        <div className="bg-gray-200 p-4 rounded-lg">
-          <h3 className="font-semibold mb-2">Class Management</h3>
-          <p className="text-gray-700">Manage your classroom sessions and monitor student progress.</p>
-        </div>
-      </div>
+    <div>
+      <h1>Teacher Dashboard</h1>
+      {/* Teacher Dashboard content goes here */}
     </div>
   );
 };
+
+export default TeacherDashboard;

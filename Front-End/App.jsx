@@ -1,10 +1,10 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdminDashboard from './pages/AdminDashboard';
-import Login from './pages/Login';
-import StudentDashboard from './pages/StudentDashboard';
-import TeacherDashboard from './pages/TeacherDashboard';
+import AdminDashboard from './Pages/AdminDashboard';
+import Login from './Pages/Login';
+import StudentDashboard from './Pages/StudentDashboard';
+import TeacherDashboard from './Pages/TeacherDashboard';
 import Navbar from './components/Navbar';
 
 const App = () => {

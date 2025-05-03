@@ -1,23 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components';
-import { Login, AdminDashboard, StudentDashboard, TeacherDashboard } from './Pages';
-import { AdminDashboard } from './pages/AdminDashboard';
-import { TeacherDashboard } from './pages/TeacherDashboard';
-import { StudentDashboard } from './pages/StudentDashboard';
+import {
+  Login,
+  AdminDashboard,
+  StudentDashboard,
+  TeacherDashboard,
+} from './Pages';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/teacher" element={<TeacherDashboard />} />
-        <Route path="/student" element={<StudentDashboard />} />
-      </Routes>
+      <main style={{ padding: '2rem' }}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/student" element={<StudentDashboard />} />
+          <Route path="/teacher" element={<TeacherDashboard />} />
+        </Routes>
+      </main>
     </Router>
   );
-}
+};
 
 export default App;

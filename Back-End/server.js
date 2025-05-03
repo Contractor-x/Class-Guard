@@ -9,7 +9,7 @@ const port = 5000;
 // Initialize the Permit.io SDK with the necessary credentials
 const permit = new Permit({
   pdp: 'https://cloudpdp.api.permit.io',  // Your Permit.io PDP URL
-  token: 'YOUR_PERMIT_API_KEY',          // Your API key from Permit.io
+  token: 'AxA6tQhO3bzDAuxdG0rrpeSDsKH9Y3Ha3Qrc0aq9BMTQHV4QANukVzBFdRPFmTXJfiLyS5YvVh0vrfP9aqYdvy',  // Your API key from Permit.io
 });
 
 app.use(bodyParser.json());

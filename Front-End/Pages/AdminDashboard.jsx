@@ -1,13 +1,11 @@
-// src/pages/AdminDashboard.jsx
 import React, { useState, useEffect } from 'react';
 
 const AdminDashboard = () => {
   const [permitted, setPermitted] = useState(false);
 
   useEffect(() => {
-    // Call the API to check if the user has permission to access the Admin Dashboard
     const checkPermission = async () => {
-      const response = await fetch('/api/check-permission', {
+      const response = await fetch('http://localhost:5000/api/check-permission', {
         method: 'POST',
         body: JSON.stringify({ resource: 'admin-dashboard' }),
         headers: { 'Content-Type': 'application/json' },
